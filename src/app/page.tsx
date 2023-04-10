@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import NextButton from "@/components/button/NextButton";
+import Head from "next/head";
 
 const ProfilePage = () => {
   return (
