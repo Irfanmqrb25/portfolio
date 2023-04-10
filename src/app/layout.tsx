@@ -32,8 +32,8 @@ export default function RootLayout({
         >
           <SideBar />
           {children}
-          <Analytics />
         </div>
+        <Analytics />
       </body>
     </html>
   );
