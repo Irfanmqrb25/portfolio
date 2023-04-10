@@ -3,6 +3,7 @@ import "./globals.css";
 import "animate.css";
 import { Montserrat } from "next/font/google";
 import clsx from "clsx";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Irfan Muqorib",
@@ -31,6 +32,7 @@ export default function RootLayout({
         >
           <SideBar />
           {children}
+          <Analytics />
         </div>
       </body>
     </html>
