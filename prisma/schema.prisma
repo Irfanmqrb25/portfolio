@@ -17,3 +17,10 @@ model Message {
   message     String @db.VarChar(255)
   created_at  DateTime @default(now())
 } 
+
+model Guestbook {
+  id          Int    @id @default(autoincrement())
+  created_by  String @db.VarChar(100)
+  message     String @db.VarChar(255)
+  created_at  DateTime @default(now())
+}

@@ -13,6 +13,7 @@ const SideBar = () => {
     { title: "Socials", to: "/socials" },
     { title: "Projects", to: "/projects" },
     { title: "Blogs", to: "/blogs" },
+    { title: "Guestbook", to: "/guestbook" },
   ];
 
   const [isPlaying, setIsPlaying] = useState(false);
@@ -39,7 +40,7 @@ const SideBar = () => {
         />
         <ul
           className={clsx(
-            "w-full flex flex-row xxxs:gap-1 xxs:gap-0 xxs:justify-between text-sm xxxs:overflow-x-scroll xxs:overflow-x-auto"
+            "w-full flex flex-row xxxs:gap-1 sm:gap-0 xxs:justify-between text-sm xxxs:overflow-x-scroll xxs:overflow-x-auto"
           )}
         >
           {menus.map((menu, i) => (
@@ -55,6 +56,7 @@ const SideBar = () => {
           ))}
         </ul>
       </div>
+
       <div className="hidden md:flex md:flex-col md:space-y-2 md:items-center">
         <Image
           src="/assets/icon-sidebar.png"

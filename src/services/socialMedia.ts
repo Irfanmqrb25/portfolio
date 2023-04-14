@@ -1,5 +1,4 @@
 import axios from "axios";
-import { log } from "console";
 
 //Get instgram user data
 export const fetchInstagram = async () => {

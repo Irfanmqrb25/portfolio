@@ -3,6 +3,7 @@ import "./globals.css";
 import "animate.css";
 import { Montserrat } from "next/font/google";
 import clsx from "clsx";
+import ProvidersWrapper from "./ProvidersWrapper";
 
 export const metadata = {
   title: "Irfan Muqorib",
