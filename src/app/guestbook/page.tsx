@@ -24,9 +24,7 @@ const GuestBookPage = async () => {
             <SignInButton />
           )}
         </div>
-        <ChattItemList
-          image={user ? String(user?.image) : "/assets/guest-avatar.png"}
-        />
+        <ChattItemList image={"/assets/guest-avatar.png"} />
       </div>
     </div>
   );

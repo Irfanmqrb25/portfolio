@@ -7,3 +7,8 @@
     --tw-shadow-colored: 15px 15px 0 var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
