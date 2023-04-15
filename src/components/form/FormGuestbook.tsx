@@ -72,6 +72,10 @@ const FormGuestbook = ({ name }: Props) => {
     }
   };
 
+  const handleClearMessage = () => {
+    setMessage("");
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -85,7 +89,12 @@ const FormGuestbook = ({ name }: Props) => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <span className="text-gray-600 cursor-pointer text-lg mx-2">x</span>
+        <span
+          onClick={handleClearMessage}
+          className="text-gray-600 cursor-pointer text-lg px-1"
+        >
+          x
+        </span>
       </div>
       <button
         type="submit"

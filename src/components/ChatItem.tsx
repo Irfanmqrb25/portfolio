@@ -4,9 +4,10 @@ interface Props {
   name: string;
   chatt: string;
   image: string;
+  time: string;
 }
 
-const ChatItem = ({ name, chatt, image }: Props) => {
+const ChatItem = ({ name, chatt, image, time }: Props) => {
   return (
     // <div className="w-full text-sm break-words">
     //   <span className="text-neutral-600 dark:text-neutral-400 mr-1">
@@ -24,9 +25,15 @@ const ChatItem = ({ name, chatt, image }: Props) => {
           className="rounded-full min-w-[25px]"
         />
       </div>
-      <div className="flex flex-col space-y-2 p-2 bg-slate-100 rounded-r-lg rounded-bl-lg">
+      <div className="flex flex-col px-2 py-1 bg-slate-100 rounded-r-lg rounded-bl-lg">
         <p className="font-medium">{name}</p>
-        <p>{chatt}</p>
+        <div className="flex space-x-2 items-center justify-between">
+          <p>{chatt}</p>
+          <span className="tracking-wider text-[10px] mt-2">{time}</span>
+        </div>
+        {/* <div className="flex justify-end text-xs font-light">
+          <span className="tracking-wider">{time}</span>
+        </div> */}
       </div>
     </div>
   );

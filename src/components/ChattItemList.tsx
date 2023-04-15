@@ -2,12 +2,9 @@
 import * as React from "react";
 import ChatItem from "@/components/ChatItem";
 import { useGuestbook } from "@/lib/useGuestbook";
+import moment from "moment";
 
-interface Props {
-  image: string;
-}
-
-const ChattItemList = ({ image }: Props) => {
+const ChattItemList = () => {
   const { data } = useGuestbook();
   return (
     <div className="flex flex-col space-y-3 rounded-sm h-screen p-2 w-[80%]">
@@ -19,7 +16,8 @@ const ChattItemList = ({ image }: Props) => {
             key={data?.id}
             name={data?.created_by}
             chatt={data?.message}
-            image={image}
+            image={data?.image}
+            time={moment(data?.created_at).format("HH.mm")}
           />
         ))}
     </div>

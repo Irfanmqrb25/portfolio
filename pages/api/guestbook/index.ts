@@ -21,6 +21,7 @@ export default async function handler(
         data: {
           created_by,
           message,
+          image: session?.user?.image!,
         },
       });
       return res.status(201).json(createChat);

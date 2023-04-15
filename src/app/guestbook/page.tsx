@@ -7,7 +7,6 @@ import ChattItemList from "@/components/ChattItemList";
 
 const GuestBookPage = async () => {
   const user = await getCurrentUser();
-
   return (
     <div className="flex flex-col mt-4 md:mt-0 mb-10 mx-auto md:mx-4 gap-5 xs:gap-6 md:gap-7 xl:gap-2 2xl:gap-5 w-full">
       <div className="flex flex-col font-montserrat space-y-5 mx-auto items-center md:items-start md:mx-4 w-full">
@@ -24,7 +23,7 @@ const GuestBookPage = async () => {
             <SignInButton />
           )}
         </div>
-        <ChattItemList image={"/assets/guest-avatar.png"} />
+        <ChattItemList />
       </div>
     </div>
   );
