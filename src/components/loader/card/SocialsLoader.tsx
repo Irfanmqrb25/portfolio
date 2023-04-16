@@ -11,7 +11,7 @@ const SocialsLoader = (props: any) => {
       foregroundColor="#ecebeb"
       {...props}
     >
-      <rect x="0" y="0" rx="5" ry="5" width="400" height="200" />
+      <rect x="0" y="0" width="400" height="200" />
     </ContentLoader>
   );
 };

@@ -23,6 +23,7 @@
     "moment": "^2.29.4",
     "next": "13.3.0",
     "next-auth": "^4.22.0",
+    "next-themes": "^0.2.1",
     "postcss": "8.4.21",
     "react": "18.2.0",
     "react-animated-css": "^1.2.1",

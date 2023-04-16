@@ -1,12 +1,17 @@
+"use client";
 import * as React from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { useTheme } from "next-themes";
+import clsx from "clsx";
 
 const FormMessage = () => {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
+
+  const { theme } = useTheme();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -67,7 +72,7 @@ const FormMessage = () => {
             Your Name
           </label>
           <input
-            className="border border-[#BDCDD6] w-[285px] px-2 py-1 rounded-sm"
+            className="border bg-transparent border-[#BDCDD6] w-[285px] px-2 py-1 rounded-sm"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -78,7 +83,7 @@ const FormMessage = () => {
             Your Email
           </label>
           <input
-            className="border border-[#BDCDD6] w-[285px] px-2 py-1 rounded-sm"
+            className="border border-[#BDCDD6] bg-transparent w-[285px] px-2 py-1 rounded-sm"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -87,14 +92,17 @@ const FormMessage = () => {
       </div>
       <textarea
         placeholder="Type your message here..."
-        className="h-36 border border-[#BDCDD6] px-2 py-1 rounded-sm placeholder:text-sm placeholder:tracking-wider"
+        className="h-36 bg-transparent border border-[#BDCDD6] px-2 py-1 rounded-sm placeholder:text-sm placeholder:tracking-wider"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
       <button
         type="submit"
         disabled={isLoading}
-        className="bg-slate-900 p-2 mx-auto text-sm text-white rounded-sm"
+        className={clsx(
+          "bg-slate-900 p-2 mx-auto text-sm text-white rounded-sm",
+          theme === "dark" && "bg-gray-600"
+        )}
       >
         {isLoading ? (
           <svg

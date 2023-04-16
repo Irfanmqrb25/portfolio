@@ -4,6 +4,8 @@ import * as React from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { useGuestbook } from "@/lib/useGuestbook";
 import { IoMdSend } from "react-icons/io";
+import { useTheme } from "next-themes";
+import clsx from "clsx";
 
 interface Props {
   name: String;
@@ -11,6 +13,7 @@ interface Props {
 
 const FormGuestbook = ({ name }: Props) => {
   const [message, setMessage] = React.useState("");
+  const { theme } = useTheme();
 
   const { mutate } = useGuestbook();
 
@@ -86,20 +89,26 @@ const FormGuestbook = ({ name }: Props) => {
         <input
           type="text"
           placeholder="Your message..."
-          className="focus:outline-none placeholder:text-sm w-full"
+          className="focus:outline-none bg-transparent placeholder:text-sm w-full"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
         <span
           onClick={handleClearMessage}
-          className="text-gray-600 cursor-pointer text-lg px-1"
+          className={clsx(
+            "text-gray-600 cursor-pointer text-lg px-1",
+            theme === "dark" && "text-white"
+          )}
         >
           x
         </span>
       </div>
       <button
         type="submit"
-        className="flex items-center rounded-sm bg-black text-white px-3 py-[6px]"
+        className={clsx(
+          "flex items-center rounded-sm bg-black text-white px-3 py-[6px]",
+          theme === "dark" && "bg-gray-500"
+        )}
       >
         <IoMdSend className="mr-1" />
         Send

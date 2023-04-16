@@ -8,7 +8,111 @@
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.custom-shadow-dark {
+    --tw-shadow: 15px 15px 0 #6b7280;
+    --tw-shadow-colored: 15px 15px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #6b7280), var(--tw-ring-shadow, 0 0 #6b7280), var(--tw-shadow);
+}
+
 ::-webkit-scrollbar {
     width: 0;
     background: transparent;
+}
+
+.button {
+    --radius: 5px;
+    --border: 1px;
+    --padding: 1px;
+    border-radius: var(--radius);
+    border: 0;
+    background: hsl(0 0% 90%);
+    box-shadow:
+        inset 0 1px 0px 0px hsl(0 0% 100% / 0.5),
+        inset 0 -1px 0px 0px hsl(0 0% 0% / 0.5);
+    /*   background:
+      conic-gradient(from calc(var(--rx) * 360deg) at calc(var(--x) * 1px) calc(var(--y) * 1px), hsl(10 90% 50%), hsl(140 70% 50%), hsl(320 70% 50%), hsl(210 70% 50%), hsl(10 70% 50%));
+    background-attachment: fixed; */
+    font-size: 1.25rem;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: var(--padding);
+    border: var(--border) solid hsl(0 0% 80%);
+    transform: translate(calc(var(--active, 0) * -2px), calc(var(--active, 0) * 2px));
+    transition: transform 0.1s;
+    color: hsl(0 0% 20%);
+}
+
+.button:is(:hover, :focus-visible) {
+    --hover: 1;
+    /*   border-color: transparent !important; */
+}
+
+.button:active {
+    --active: 1;
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    /*   width: 100%;
+    aspect-ratio: 1;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%; */
+    border-radius: calc(var(--radius) - var(--border));
+    /*   transition: background 0.2s; */
+    background: hsl(0 0% 100% / calc(1 - var(--hover, 0) * 0.25));
+    background: grey;
+    background:
+        conic-gradient(from calc(var(--rx, 0) * 180deg) at calc(var(--x, 0) * 100%) calc(var(--y, 0) * 100%),
+            hsl(10 90% 70%),
+            hsl(140 80% 70%),
+            hsl(320 80% 70%),
+            hsl(210 80% 70%),
+            hsl(10 80% 70%));
+    filter: saturate(0.7);
+    opacity: var(--hover, 0);
+    transition: opacity 0.2s;
+}
+
+.backdrop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: hsl(0 0% 98% / 0.6);
+    border-radius: calc(var(--radius) - var(--padding));
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    backdrop-filter: blur(20px) brightness(1.5);
+}
+
+.text {
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 14px;
+}
+
+.dark {
+    border-color: hsl(0 0% 20%);
+}
+
+.dark .backdrop {
+    background: hsl(0 0% 10% / 0.4);
+    backdrop-filter: blur(20px) brightness(1.2) saturate(1);
+}
+
+.dark:after {
+    background: hsl(0 0% 10% / calc(1 - var(--hover, 0) * 0.25));
+}
+
+.dark {
+    color: hsl(0 0% 98%);
+    background: hsl(0 0% 10%);
 }

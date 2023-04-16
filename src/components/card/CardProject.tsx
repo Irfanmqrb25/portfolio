@@ -1,7 +1,10 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import toast from "react-hot-toast";
-
+import { useTheme } from "next-themes";
+import clsx from "clsx";
+import { useEffect, useState } from "react";
 interface Props {
   title: string;
   desc: string;
@@ -11,8 +14,19 @@ interface Props {
 }
 
 const CardProject = ({ title, desc, img, stack, url }: Props) => {
+  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   const notify = () => {
-    toast.error("Sorry, code is under development 😖", {
+    toast.error("Sorry, code under development 😖", {
       duration: 1500,
       style: {
         border: "1px solid #713200",
@@ -43,7 +57,10 @@ const CardProject = ({ title, desc, img, stack, url }: Props) => {
         <Link
           href={url}
           target="_blank"
-          className="flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-slate-900 rounded-sm"
+          className={clsx(
+            "flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-slate-900 rounded-sm",
+            theme === "dark" && "bg-[#454545]"
+          )}
         >
           <span className="text-white text-sm">Code</span>
           <Image
@@ -57,7 +74,10 @@ const CardProject = ({ title, desc, img, stack, url }: Props) => {
       {url === "develop" && (
         <button
           onClick={notify}
-          className="flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-slate-900 rounded-sm"
+          className={clsx(
+            "flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-slate-900 rounded-sm",
+            theme === "dark" && "bg-[#454545]"
+          )}
         >
           <span className="text-white text-sm">Code</span>
           <Image

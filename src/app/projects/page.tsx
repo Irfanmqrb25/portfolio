@@ -35,7 +35,7 @@ const ProjectsPage = () => {
       img: pollsioApp,
       desc: "A voting application that makes it easy for you to vote in a large number of participants.",
       stack: "ReactJS, ExpressJS, MongoDB, Tailwind CSS",
-      url: "develop",
+      url: "https://github.com/Irfanmqrb25/polls.io",
     },
   ];
 

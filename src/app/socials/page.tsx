@@ -14,14 +14,18 @@ import {
 } from "@/services/socialMedia";
 import Image from "next/image";
 import SocialsLoader from "@/components/loader/card/SocialsLoader";
+import { useTheme } from "next-themes";
+import clsx from "clsx";
 
 const SocialsPage = () => {
+  const [mounted, setMounted] = React.useState(false);
   const [myEmail, setMyEmail] = React.useState("irfanmqrbdev@gmail.com");
   const [githubData, setGithubData] = React.useState<UserGithub>();
   const [githubStars, setGithubStars] = React.useState<number>(0);
   const [instagramData, setInstagramData] = React.useState<UserInstagram[]>([]);
   const [twitterData, setTwitterData] = React.useState<UserTwitter>();
   const [loading, setLoading] = React.useState(true);
+  const { theme } = useTheme();
 
   function copyToClipboard() {
     navigator.clipboard.writeText(myEmail);
@@ -66,6 +70,14 @@ const SocialsPage = () => {
     };
     fetchTwitterData();
   }, []);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className="flex flex-col mt-4 md:mt-0 mb-10 mx-4 gap-5 xs:gap-6 md:gap-7 xl:gap-2 2xl:gap-5">
@@ -113,7 +125,7 @@ const SocialsPage = () => {
           <label className="font-montserrat font-medium font-lg">Email</label>
           <div className="flex gap-2 font-montserrat">
             <input
-              className="border border-[#BDCDD6] w-[245px] px-2 py-1 rounded-sm"
+              className="border bg-transparent border-[#BDCDD6] w-[245px] px-2 py-1 rounded-sm"
               type="email"
               value={myEmail}
               readOnly
@@ -122,7 +134,10 @@ const SocialsPage = () => {
             <button
               onClick={copyToClipboard}
               title="copy"
-              className="px-2 bg-slate-900 rounded-sm"
+              className={clsx(
+                "px-2 bg-slate-900 rounded-sm",
+                theme === "dark" && "bg-[#5f5c5b]"
+              )}
             >
               <Image
                 src={"/assets/copy-icon.svg"}
