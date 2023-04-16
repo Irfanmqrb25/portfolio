@@ -2,7 +2,6 @@
 import * as React from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { useTheme } from "next-themes";
 import clsx from "clsx";
 
 const FormMessage = () => {
@@ -10,8 +9,6 @@ const FormMessage = () => {
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
-
-  const { theme } = useTheme();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -100,8 +97,7 @@ const FormMessage = () => {
         type="submit"
         disabled={isLoading}
         className={clsx(
-          "bg-slate-900 p-2 mx-auto text-sm text-white rounded-sm",
-          theme === "dark" && "bg-gray-600"
+          "bg-[#454545] text-white hover:bg-[#383838] p-2 mx-auto text-sm rounded-sm"
         )}
       >
         {isLoading ? (

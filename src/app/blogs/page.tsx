@@ -3,6 +3,7 @@ import reactCover from "../../assets/react-cover.jpg";
 import cleanCodeCover from "../../assets/cleanCode-cover.jpg";
 import CardBlog from "@/components/card/CardBlog";
 import { Toaster } from "react-hot-toast";
+import NextButton from "@/components/button/NextButton";
 
 const BlogsPage = () => {
   const blogs = [
@@ -42,6 +43,7 @@ const BlogsPage = () => {
         </div>
       </div>
       <Toaster />
+      <NextButton url={"/guestbook"} />
     </div>
   );
 };

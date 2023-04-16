@@ -1,4 +1,3 @@
-"use client";
 import * as React from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
@@ -12,17 +11,6 @@ interface Props {
 }
 
 const ChatItem = ({ name, chatt, image, time }: Props) => {
-  const [mounted, setMounted] = React.useState(false);
-  const { theme } = useTheme();
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
   return (
     <div className="w-full flex space-x-2 text-sm">
       <div className="mt-1">
@@ -36,8 +24,7 @@ const ChatItem = ({ name, chatt, image, time }: Props) => {
       </div>
       <div
         className={clsx(
-          "flex flex-col px-2 py-1 bg-slate-100 rounded-r-lg rounded-bl-lg",
-          theme === "dark" && "bg-[#2C3333]"
+          "flex flex-col px-2 py-1 text-black bg-[#E9E8E8] rounded-r-lg rounded-bl-lg"
         )}
       >
         <p className="font-medium">{name}</p>

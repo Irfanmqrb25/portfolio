@@ -1,10 +1,7 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import clsx from "clsx";
-import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
 
 interface Props {
   title: string;
@@ -15,18 +12,6 @@ interface Props {
 }
 
 const CardBlog = ({ title, desc, img, time, url }: Props) => {
-  const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
-
-  // useEffect only runs on the client, so now we can safely show the UI
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
   const notify = () => {
     toast.error("Sorry, the blogs in writing 😖", {
       duration: 1500,
@@ -60,8 +45,7 @@ const CardBlog = ({ title, desc, img, time, url }: Props) => {
           href={url}
           target="_blank"
           className={clsx(
-            "flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-slate-900 rounded-sm",
-            theme === "dark" && "bg-[#454545]"
+            "flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-blue-500 rounded-sm"
           )}
         >
           <span className="text-white text-sm">Read More</span>
@@ -77,8 +61,7 @@ const CardBlog = ({ title, desc, img, time, url }: Props) => {
         <button
           onClick={notify}
           className={clsx(
-            "flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-slate-900 rounded-sm",
-            theme === "dark" && "bg-[#454545]"
+            "flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-blue-500 rounded-sm"
           )}
         >
           <span className="text-white text-xs">Read More</span>
