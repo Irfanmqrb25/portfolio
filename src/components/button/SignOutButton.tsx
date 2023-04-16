@@ -5,13 +5,13 @@ import { VscSignOut } from "react-icons/vsc";
 
 const SignOutButton = () => {
   return (
-    <div
+    <button
       onClick={() => signOut()}
-      className="flex space-x-1 items-center mx-auto ml-0 p-1 rounded-sm cursor-pointer"
+      className="flex space-x-1 items-center mx-auto ml-0 p-1 rounded-sm cursor-pointer text-xs"
     >
-      <VscSignOut className="text-sm" />
-      <p className="text-xs">Sign out</p>
-    </div>
+      <VscSignOut className="text-sm mr-1" />
+      Sign out
+    </button>
   );
 };
 

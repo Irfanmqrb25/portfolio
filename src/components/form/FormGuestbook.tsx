@@ -3,6 +3,7 @@ import axios from "axios";
 import * as React from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { useGuestbook } from "@/lib/useGuestbook";
+import { IoMdSend } from "react-icons/io";
 
 interface Props {
   name: String;
@@ -98,8 +99,9 @@ const FormGuestbook = ({ name }: Props) => {
       </div>
       <button
         type="submit"
-        className="rounded-sm bg-black text-white px-3 py-[6px]"
+        className="flex items-center rounded-sm bg-black text-white px-3 py-[6px]"
       >
+        <IoMdSend className="mr-1" />
         Send
       </button>
       <Toaster />

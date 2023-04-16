@@ -9,12 +9,6 @@ interface Props {
 
 const ChatItem = ({ name, chatt, image, time }: Props) => {
   return (
-    // <div className="w-full text-sm break-words">
-    //   <span className="text-neutral-600 dark:text-neutral-400 mr-1">
-    //     {name}:
-    //   </span>
-    //   {chatt}
-    // </div>
     <div className="w-full flex space-x-2 text-sm">
       <div className="mt-1">
         <Image
@@ -31,9 +25,6 @@ const ChatItem = ({ name, chatt, image, time }: Props) => {
           <p>{chatt}</p>
           <span className="tracking-wider text-[10px] mt-2">{time}</span>
         </div>
-        {/* <div className="flex justify-end text-xs font-light">
-          <span className="tracking-wider">{time}</span>
-        </div> */}
       </div>
     </div>
   );

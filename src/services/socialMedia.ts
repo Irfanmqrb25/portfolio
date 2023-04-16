@@ -55,11 +55,11 @@ export const fetchTwitter = async () => {
   try {
     const options = {
       method: "GET",
-      url: "https://twitter135.p.rapidapi.com/UserByScreenName/",
+      url: "https://twitter-data1.p.rapidapi.com/UserByScreenName/",
       params: { username: "irfanmqrb" },
       headers: {
         "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_KEY,
-        "X-RapidAPI-Host": "twitter135.p.rapidapi.com",
+        "X-RapidAPI-Host": "twitter-data1.p.rapidapi.com",
       },
     };
 

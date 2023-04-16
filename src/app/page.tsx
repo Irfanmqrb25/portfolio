@@ -25,13 +25,13 @@ const ProfilePage = () => {
         </div>
         <div className="py-3 p-2 border border-[#BDCDD6] rounded-md space-y-6 font-montserrat mx-auto md:mx-4">
           <p className="xxs:text-lg font-medium">
-            I&apos;m Irfan, a react developer and I&apos;m a student at Gunadrma
-            University.
+            I&apos;m Irfan, a react developer and I&apos;m a student at
+            Gunadarma University.
           </p>
           <p className="xxxs:text-sm xxs:text-base text-justify">
-            As a React developer, of course I am very good at using React. I
+            As a React developer, of course I&apos;m very good at using React. I
             have developed several web applications using this technology and
-            supported by other technologies such as next js, tailwaind css,
+            supported by other technologies such as next js, tailwind css,
             bootstrap, typescript and others.
           </p>
           <div className="flex flex-row gap-4 items-center">
