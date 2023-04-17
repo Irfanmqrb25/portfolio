@@ -24,12 +24,12 @@ const BlogsPage = () => {
   ];
 
   return (
-    <div className="flex flex-col mt-4 md:mt-0 mb-10 mx-4 gap-5 xs:gap-6 md:gap-7 xl:gap-2 2xl:gap-5">
-      <div className="flex flex-col font-montserrat space-y-5 mx-auto items-center md:items-start md:mx-4">
+    <div className="flex flex-col mt-4 md:mt-0 mb-10 mx-4 gap-5 xs:gap-6 md:gap-7 xl:gap-2 2xl:gap-5 xl:w-[750px] 2xl:w-full">
+      <div className="flex flex-col font-montserrat space-y-5 mx-auto items-center md:items-start md:mx-4 xl:mr-0">
         <h1 className="text-xl xxs:text-2xl xl:text-4xl font-bold py-2">
           Visit My Blog
         </h1>
-        <div className="flex flex-col lg:flex-row flex-wrap gap-10 animate__animated animate__fadeInUp animate__faster">
+        <div className="flex flex-col lg:flex-row flex-wrap gap-10 animate__animated animate__fadeInUp animate__faster w-full">
           {blogs.map((blog, i) => (
             <CardBlog
               key={i}
