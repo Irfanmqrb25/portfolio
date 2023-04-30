@@ -5,7 +5,7 @@ const ChattLoader = (props: any) => {
   return (
     <ContentLoader
       height={500}
-      width={700}
+      width={300}
       backgroundColor="#cfe8f7"
       foregroundColor="#ecebeb"
       {...props}

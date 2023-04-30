@@ -80,7 +80,7 @@ const SideBar = () => {
         </ul>
       </div>
 
-      {/* For Tablet to Desktop */}
+      {/* For Tablet and Desktop */}
       <div className="hidden md:flex md:flex-col md:space-y-2 md:items-center">
         <Image
           src="/assets/icon-sidebar.png"
@@ -96,11 +96,11 @@ const SideBar = () => {
               key={i}
               href={menu.to}
               className={`px-2 py-1 rounded-sm hover:bg-[#F5F5F5] ${
-                theme === "dark" && "hover:text-[#393646] hover:bg-gray-400"
+                theme === "dark" && "hover:text-white hover:bg-gray-400"
               } ${
                 menu.to === pathname &&
                 theme === "dark" &&
-                "text-slate-900 bg-gray-400"
+                "text-white bg-gray-400"
               } ${
                 menu.to === pathname ? "bg-[#EEEEEE] scale-105 duration-75" : ""
               }`}
