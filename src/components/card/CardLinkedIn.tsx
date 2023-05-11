@@ -64,7 +64,7 @@ const CardLinkedIn = () => {
           </div>
           <div className="flex flex-col ml-14 space-y-2 items-center text-white">
             <p className="font-semibold">3</p>
-            <p className="font-semibold">2</p>
+            <p className="font-semibold">3</p>
           </div>
           <div className="flex flex-col space-y-2 text-white">
             <p>Followers</p>

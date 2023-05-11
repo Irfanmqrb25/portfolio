@@ -17,10 +17,10 @@ import SocialsLoader from "@/components/loader/card/SocialsLoader";
 import clsx from "clsx";
 
 const SocialsPage = () => {
-  const [myEmail, setMyEmail] = React.useState("irfanmqrbdev@gmail.com");
+  const myEmail = "irfanmqrbdev@gmail.com";
   const [githubData, setGithubData] = React.useState<UserGithub>();
   const [githubStars, setGithubStars] = React.useState<number>(0);
-  const [instagramData, setInstagramData] = React.useState<UserInstagram[]>([]);
+  const [instagramData, setInstagramData] = React.useState<any>();
   const [twitterData, setTwitterData] = React.useState<UserTwitter>();
   const [loading, setLoading] = React.useState(true);
 
@@ -42,8 +42,8 @@ const SocialsPage = () => {
 
   React.useEffect(() => {
     const fetchInstagramData = async () => {
-      const data = await fetchInstagram();
-      setInstagramData(data?.data);
+      const data: any = await fetchInstagram();
+      setInstagramData(data?.data?.data?.user);
       setLoading(false);
     };
     fetchInstagramData();
@@ -84,10 +84,10 @@ const SocialsPage = () => {
         ) : (
           <div className="flex flex-col md:flex-row flex-wrap gap-14 animate__animated animate__fadeInUp animate__faster">
             <CardInstagram
-              name={instagramData[0]?.username}
-              followings={instagramData[0]?.following_count}
-              followers={instagramData[0]?.follower_count}
-              posts={instagramData[0]?.media_count}
+              name={instagramData?.username}
+              followings={instagramData?.edge_follow?.count}
+              followers={instagramData?.edge_followed_by?.count}
+              posts={instagramData?.edge_media_collections?.count}
             />
             <CardLinkedIn />
             <CardTwitter

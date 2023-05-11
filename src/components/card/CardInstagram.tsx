@@ -6,10 +6,10 @@ import { useTheme } from "next-themes";
 import clsx from "clsx";
 
 interface Props {
-  name: string;
-  followers: number;
-  followings: number;
-  posts: number;
+  name?: string;
+  followers?: number;
+  followings?: number;
+  posts?: number;
 }
 
 const CardInstagram = ({ name, followers, followings, posts }: Props) => {

@@ -1,8 +1,8 @@
 interface UserInstagram {
   username: string;
-  following_count: number;
-  follower_count: number;
-  media_count: number;
+  edge_follow: { count: number };
+  edge_followed_by: { count: number };
+  edge_media_collections: { count: number };
 }
 
 interface UserGithub {

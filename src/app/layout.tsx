@@ -9,6 +9,7 @@ import Providers from "./Providers";
 export const metadata = {
   title: "Irfan Muqorib",
   icons: "/assets/profile.png",
+  description: "Irfan Muqorib portfolio for website and mobile devices",
 };
 
 const montserrat = Montserrat({

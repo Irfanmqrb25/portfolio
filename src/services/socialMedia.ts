@@ -1,15 +1,36 @@
 import axios from "axios";
 
 //Get instgram user data
+// export const fetchInstagram = async () => {
+//   try {
+//     const options = {
+//       method: "GET",
+//       url: "https://instagram210.p.rapidapi.com/ig_profile",
+//       params: { ig: "_irfanmqrb" },
+//       headers: {
+//         "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_KEY,
+//         "X-RapidAPI-Host": "instagram210.p.rapidapi.com",
+//       },
+//     };
+
+//     const response = await axios.request(options);
+
+//     return { data: response.data, isLoading: false };
+//   } catch (error) {
+//     console.error("error: ", error);
+//   }
+// };
 export const fetchInstagram = async () => {
   try {
     const options = {
       method: "GET",
-      url: "https://instagram210.p.rapidapi.com/ig_profile",
-      params: { ig: "_irfanmqrb" },
+      url: "https://instagram191.p.rapidapi.com/user/details-by-username/",
+      params: {
+        username: "_irfanmqrb",
+      },
       headers: {
         "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_KEY,
-        "X-RapidAPI-Host": "instagram210.p.rapidapi.com",
+        "X-RapidAPI-Host": "instagram191.p.rapidapi.com",
       },
     };
 
@@ -17,7 +38,7 @@ export const fetchInstagram = async () => {
 
     return { data: response.data, isLoading: false };
   } catch (error) {
-    console.error(error);
+    console.error("error: ", error);
   }
 };
 
