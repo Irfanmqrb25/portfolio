@@ -36,9 +36,9 @@ const CardBlog = ({ title, desc, img, time, url }: Props) => {
         className="rounded-sm h-[200px] object-cover"
       />
       <div className="flex flex-col gap-3 font-montserrat">
-        <h1 className="font-bold text-xl">{title}</h1>
-        <p className="text-slate-400 font-sm text-xs">{time}</p>
-        <p className="text-justify text-sm">{desc}</p>
+        <h1 className="text-xl font-bold">{title}</h1>
+        <p className="text-xs text-slate-400 font-sm">{time}</p>
+        <p className="text-sm text-justify">{desc}</p>
       </div>
       {url !== "writing" && (
         <Link
@@ -48,7 +48,7 @@ const CardBlog = ({ title, desc, img, time, url }: Props) => {
             "flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-blue-500 rounded-sm"
           )}
         >
-          <span className="text-white text-sm">Read More</span>
+          <span className="text-sm text-white">Read More</span>
           <Image
             width={20}
             height={20}
@@ -64,7 +64,7 @@ const CardBlog = ({ title, desc, img, time, url }: Props) => {
             "flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-blue-500 rounded-sm"
           )}
         >
-          <span className="text-white text-xs">Read More</span>
+          <span className="text-xs text-white">Read More</span>
           <Image
             width={18}
             height={18}

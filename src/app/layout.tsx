@@ -7,9 +7,18 @@ import clsx from "clsx";
 import Providers from "./Providers";
 
 export const metadata = {
+  metadataBase: new URL("https://irfanmuqorib.vercel.app"),
   title: "Irfan Muqorib",
   icons: "/assets/profile.png",
-  description: "Irfan Muqorib portfolio for website and mobile devices",
+  description: "Irfan Muqorib's personal website.",
+  openGraph: {
+    title: "Irfan Muqorib",
+    description: "Irfan Muqorib's personal website.",
+    url: "https://irfanmuqorib.vercel.app",
+    siteName: "Irfan Muqorib",
+    locale: "id-ID",
+    type: "website",
+  },
 };
 
 const montserrat = Montserrat({

@@ -32,7 +32,7 @@ const CardLinkedIn = () => {
       <div className="flex flex-row px-5 py-2 space-x-32 xxs:space-x-36">
         <div className="flex flex-row items-center space-x-1">
           <Image src={linkedin} alt="Logo" className="w-[25px]" />
-          <p className="font-semibold font-montserrat text-white">LinkedIn</p>
+          <p className="font-semibold text-white font-montserrat">LinkedIn</p>
         </div>
         <Link
           href={"https://www.linkedin.com/in/irfan-muqorib-62822422b/"}
@@ -53,18 +53,18 @@ const CardLinkedIn = () => {
       >
         <div className="flex flex-row items-center space-x-2">
           <Image src={avatar} alt="avatar" className="w-[40px]" />
-          <p className="font-montserrat font-medium text-lg text-white">
+          <p className="text-lg font-medium text-white font-montserrat">
             Irfan Muqorib
           </p>
         </div>
-        <div className="flex flex-row ml-12 space-x-2 items-center">
-          <div className="flex flex-col space-y-2 items-center">
+        <div className="flex flex-row items-center ml-12 space-x-2">
+          <div className="flex flex-col items-center space-y-2">
             <Image src={followerWhite} alt="" className="w-[22px] " />
             <Image src={connectionIcon} alt="" className="w-[22px]" />
           </div>
-          <div className="flex flex-col ml-14 space-y-2 items-center text-white">
-            <p className="font-semibold">3</p>
-            <p className="font-semibold">3</p>
+          <div className="flex flex-col items-center space-y-2 text-white ml-14">
+            <p className="font-semibold">6</p>
+            <p className="font-semibold">6</p>
           </div>
           <div className="flex flex-col space-y-2 text-white">
             <p>Followers</p>

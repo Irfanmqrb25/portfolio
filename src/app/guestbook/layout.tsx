@@ -1,5 +1,6 @@
 export const metadata = {
   title: "Guestbook | Irfanmqrb",
+  description: "sign in for my guestbook",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

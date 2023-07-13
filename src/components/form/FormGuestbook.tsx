@@ -85,11 +85,16 @@ const FormGuestbook = ({ name }: Props) => {
       onSubmit={handleSubmit}
       className="flex items-center w-full space-x-2"
     >
-      <div className="border flex p-1 rounded-sm space-x-2 justify-between w-full">
+      <div
+        className={clsx(
+          "flex justify-between w-full p-1 space-x-2 border rounded-sm",
+          theme === "dark" ? "border-white" : "border-black"
+        )}
+      >
         <input
           type="text"
           placeholder="Your message..."
-          className="focus:outline-none bg-transparent placeholder:text-sm w-full"
+          className="w-full bg-transparent focus:outline-none placeholder:text-sm"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
@@ -106,12 +111,11 @@ const FormGuestbook = ({ name }: Props) => {
       <button
         type="submit"
         className={clsx(
-          "flex items-center rounded-sm bg-black text-white px-3 py-[6px]",
-          theme === "dark" && "bg-gray-500"
+          "items-center rounded-sm bg-black text-white p-[11px] border-slate-800",
+          theme === "dark" && "bg-white"
         )}
       >
-        <IoMdSend className="mr-1" />
-        Send
+        <IoMdSend className={theme === "dark" ? "text-black" : "text-white"} />
       </button>
       <Toaster />
     </form>
