@@ -9,9 +9,10 @@ interface Props {
   img: any;
   stack: string;
   url: string;
+  demoUrl?: string;
 }
 
-const CardProject = ({ title, desc, img, stack, url }: Props) => {
+const CardProject = ({ title, desc, img, stack, url, demoUrl }: Props) => {
   const notify = () => {
     toast.error("Sorry, code under development 😖", {
       duration: 1500,
@@ -37,10 +38,10 @@ const CardProject = ({ title, desc, img, stack, url }: Props) => {
       <Image
         src={img}
         alt="cover"
-        className="rounded-sm h-[200px] object-cover"
+        className="rounded-sm w-full h-[200px] object-cover"
       />
       <p className="font-medium text-sm">Stack: {stack}</p>
-      {url !== "develop" && (
+      <div className="flex flex-col gap-2">
         <Link
           href={url}
           target="_blank"
@@ -56,23 +57,24 @@ const CardProject = ({ title, desc, img, stack, url }: Props) => {
             height={20}
           />
         </Link>
-      )}
-      {url === "develop" && (
-        <button
-          onClick={notify}
-          className={clsx(
-            "flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-red-500 rounded-sm"
-          )}
-        >
-          <span className="text-white text-sm">Code</span>
-          <Image
-            src={"assets/arrow-icon.svg"}
-            alt="arrow icon"
-            width={20}
-            height={20}
-          />
-        </button>
-      )}
+        {demoUrl ? (
+          <Link
+            href={demoUrl}
+            target="_blank"
+            className={clsx(
+              "flex items-center mx-auto ml-0 gap-1 px-2 py-1 bg-blue-500 rounded-sm"
+            )}
+          >
+            <span className="text-white text-sm">Live demo</span>
+            <Image
+              src={"assets/arrow-icon.svg"}
+              alt="arrow icon"
+              width={20}
+              height={20}
+            />
+          </Link>
+        ) : null}
+      </div>
     </div>
   );
 };

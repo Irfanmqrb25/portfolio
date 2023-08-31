@@ -32,7 +32,6 @@ const FormMessage = () => {
 
     setIsLoading(true);
 
-    //post data
     try {
       await axios.post("/api/message", {
         name,
